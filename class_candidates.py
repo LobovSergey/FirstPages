@@ -13,7 +13,7 @@ class Candidates:
         html_all = ''
         for i in self.file:
             list_skills = i["skills"].lower().split(', ')
-            html_all += f'<a href="/candidates/{i["pk"]}"><h3>{i["name"]}</h3></a>' \
+            html_all += f'<a href="/candidate/{i["pk"]}"><h3>{i["name"]}</h3></a>' \
                         f'<p><strong>Position</strong> - {i["position"]}</p>' \
                         f'<p><strong>Skills</strong>:  {get_link(list_skills)}</p><hr />'
         return html_all
@@ -35,7 +35,7 @@ class Candidates:
         for i in self.file:
             list_skills = i["skills"].lower().split(', ')
             if skill in list_skills:
-                html_skill += f'<a href="/candidates/{i["pk"]}"><h3>{i["name"]}</h3></a>' \
+                html_skill += f'<a href="/candidate/{i["pk"]}"><h3>{i["name"]}</h3></a>' \
                               f'<p><strong>Position</strong> - {i["position"]}</p>' \
                               f'<p><strong>Skills</strong>:  {get_link(list_skills)}</p><hr />'
         if len(html_skill) != 0:
